@@ -13,8 +13,8 @@ const Slider = () => {
 
     useEffect(() => {
         const timer = setInterval(() => {
-            if (value > 3) {
-                setValue(1)
+            if (value > 2) {
+                setValue(0)
             } else {
                 setValue(value + 1)
             }
@@ -27,7 +27,8 @@ const Slider = () => {
 
     return (
         <div className="overflow-hidden relative">
-            <div className={`flex translate-x-[-${value}00%] transition-transform`}>
+            {/* <div className={`flex translate-x-[-${3}00%] transition-transform`}> */}
+            <div className={`flex transition-transform`} style={{transform:`translateX(-${value}00%)`}}>
                 {slides.map((img, index) => (
                     <img src={img} alt="logo" className="" key={index} />
                 ))}
