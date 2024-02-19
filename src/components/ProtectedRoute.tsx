@@ -8,7 +8,7 @@ type Props = PropsWithChildren
 const ProtectedRoute = ({children}:Props) => {
   const {isLoggedIn} = useSelector((state:Rootstate)=>state.user)
 
-  return isLoggedIn ? children : <Navigate to="/login" replace={true}/>
+  return isLoggedIn ? children : <Navigate to="/auth" replace={true}/>
 }
 
 export default ProtectedRoute
