@@ -21,8 +21,10 @@ const Register = () => {
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setIsLoading(true);
-        if (!email || !password || !name)
+        if (!email || !password || !name){
+            setIsLoading(false);
             return toast.error("Please fill in all the fields");
+        }
 
         try {
             const response = await axios.post(

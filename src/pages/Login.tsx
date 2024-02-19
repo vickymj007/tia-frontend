@@ -20,8 +20,10 @@ const Login = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
-    if (!email || !password)
+    if (!email || !password){
+      setIsLoading(false)
       return toast.error("Please fill in all the fields");
+    }
 
     try {
       const response = await axios.post(
